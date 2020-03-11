@@ -33,20 +33,23 @@ from datetime import datetime
 
 month = datetime.today().month
 year = datetime.today().year
-
+c = calendar.TextCalendar(calendar.SUNDAY)
 
 
 if len(sys.argv) < 2:
-    print(month, year)
+
+    print(c.formatmonth(year, month))
 
 elif len(sys.argv) == 2:
-    month = sys.argv[1]
-    print(month, year)
+
+    month = int(sys.argv[1])
+    print(c.formatmonth(year, month))
+
 
 elif len(sys.argv) == 3:
-    month = sys.argv[1]
-    year = sys.argv[2]
-    print(month, year)
+    month = int(sys.argv[1])
+    year = int(sys.argv[2])
+    print(c.formatmonth(year, month))
 
-else: 
+else:
     print("Need a month and a year")
